@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'rust_test_prj'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=rust_test_prj",
+                    "--package=rust_test_prj"
+                ],
+                "filter": {
+                    "name": "rust_test_prj",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'rust_test_prj'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=rust_test_prj",
+                    "--package=rust_test_prj"
+                ],
+                "filter": {
+                    "name": "rust_test_prj",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch Rust Program",
+            "program": "${workspaceFolder}/target/debug/rust_test_prj", // Calea către executabil
+            "args": [], // Argumente suplimentare pentru programul tău
+            "cwd": "${workspaceFolder}", // Directorul de lucru
+            "stopOnEntry": false, // Dacă vrei să oprești la început
+            "showDisassembly": "never"
+        }
+    ]
+}
